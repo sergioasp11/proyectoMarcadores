@@ -1,6 +1,5 @@
 const usuario = require("../models/usuario");
-const bcryptjs = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+
 
 exports.all = async (req, res) => {
     try {
@@ -20,7 +19,7 @@ exports.all = async (req, res) => {
 
 exports.find = async (req, res) => {
     try {
-        const usuarioBuscar = await usuario.findById(req.params.email);
+        const usuarioBuscar = await Usuario.findById(req.params.email);
         if(! usuarioBuscar){
             res.status(400).send("No se encontro el usuario");
         }
