@@ -23,5 +23,4 @@ module.exports = function (req, res, next) {
   } catch (error) {
     res.status(400).json({msg:"Token no válido"})
   }
-
 };
